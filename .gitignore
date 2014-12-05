@@ -1,12 +1,36 @@
-/web/bundles/
-/app/bootstrap.php.cache
-/app/cache/*
-/app/config/parameters.yml
-/app/logs/*
-!app/cache/.gitkeep
-!app/logs/.gitkeep
-/app/phpunit.xml
-/build/
-/vendor/
-/bin/
-/composer.phar
+# Bootstrap
+app/bootstrap*
+
+# Symfony directories
+vendor
+vendor/*
+*/logs/*
+*/cache/*
+web/uploads/*
+web/bundles/*
+web/css/*
+# web/img/experience/*
+web/js/*
+web/js/compiled/*
+web/js/compiled-experience/*
+src/*/map/
+src/*/om/
+app/propel/sql/*
+
+# Logs
+error.log
+access.log
+
+# Configuration files
+app/config/parameters.ini
+app/config/parameters.yml
+
+# Composer phar & lock
+composer.phar
+composer.lock
+
+#phpstorm
+.idea
+
+# phpunit code coverage
+phpunit-report/*
