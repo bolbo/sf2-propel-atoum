@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="default"
+          namespace="Acme\DemoBundle\Model"
+          package='src/Acme/DemoBundle/Model'
+          defaultIdMethod="native"
+          xsi:noNamespaceSchemaLocation="http://xsd.propelorm.org/1.6/database.xsd">
+
+    <table name="categorie">
+        <column name="id" type="Integer" required="true" autoIncrement="true" primaryKey="true"/>
+        <column name="created_at" type="Timestamp" required="true"/>
+        <column name="updated_at" type="Timestamp"/>
+        <column name="intitule" type="varchar" size="200" required="true"/>
+        <column name="description" type="LongVarchar"/>
+
+        <column name="actif" type="Boolean" required="true" default="true"/>
+
+        <behavior name="timestampable">
+            <parameter name="create_column" value="created_at"/>
+            <parameter name="update_column" value="updated_at"/>
+        </behavior>
+
+        <behavior name="sluggable">
+            <parameter name="slug_pattern" value="{Intitule}"/>
+            <parameter name="replacement" value="-"/>
+            <parameter name="scope_column" value=""/>
+            <parameter name="permanent" value="false"/>
+        </behavior>
+
+    </table>
+
+
+    <table name="article" phpName="Article">
+        <column name="id" type="Integer" required="true" autoIncrement="true" primaryKey="true"/>
+        <column name="created_at" type="Timestamp" required="true"/>
+        <column name="updated_at" type="Timestamp"/>
+
+        <column name="categorie_id" type="Integer" required="true"/>
+
+        <column name="code" type="varchar" size="200" required="true"/>
+        <column name="intitule" type="varchar" size="200" required="true"/>
+        <column name="description" type="LongVarchar"/>
+        <column name="actif" type="Boolean" required="true" default="true"/>
+
+        <behavior name="timestampable">
+            <parameter name="create_column" value="created_at"/>
+            <parameter name="update_column" value="updated_at"/>
+        </behavior>
+
+        <behavior name="sluggable">
+            <parameter name="slug_pattern" value="{Intitule}"/>
+            <parameter name="replacement" value="-"/>
+            <parameter name="scope_column" value=""/>
+            <parameter name="permanent" value="false"/>
+        </behavior>
+
+        <foreign-key foreignTable="categorie">
+            <reference foreign="id" local="categorie_id"/>
+        </foreign-key>
+    </table>
+</database>
