@@ -3,5 +3,7 @@
 {% block title "Article add" %}
 
 {% block content %}
-    {{ form(form) }}
+    {{ form_start(form, {'attr': {'id': 'form_article' }}) }}
+
+    {{ form_end(form) }}
 {% endblock %}

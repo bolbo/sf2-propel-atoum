@@ -98,8 +98,10 @@ class ArticleType extends AbstractType
     {
         $resolver->setDefaults(
             array(
-                'data_class' => 'Acme\DemoBundle\Model\Article',
-                'intention'  => 'acme_demo_article_form',
+                'data_class'      => 'Acme\DemoBundle\Model\Article',
+                'intention'       => 'acme_demo_article_form',
+                'csrf_protection' => true,
+                'csrf_field_name' => '_token',
             )
         );
     }
