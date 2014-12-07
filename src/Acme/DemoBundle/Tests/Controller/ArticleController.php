@@ -48,7 +48,7 @@ class ArticleController extends ControllerTest
     }
 
 
-    public function testShowArticle()
+    /*public function testShowArticle()
     {
         $this
             ->request(array('debug' => true))
@@ -56,7 +56,7 @@ class ArticleController extends ControllerTest
             ->hasStatus(200)
             ->hasCharset('UTF-8')
             ->hasVersion('1.1');
-    }
+    }*/
 
 
 }
