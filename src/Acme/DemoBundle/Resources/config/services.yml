@@ -1,0 +1,26 @@
+services:
+    acme_demo_article_manager:
+        class: Acme\DemoBundle\Manager\ArticleManager
+        arguments: [Acme\DemoBundle\Model\Article]
+
+    acme_demo_categorie_manager:
+        class: Acme\DemoBundle\Manager\CategorieManager
+        arguments: [Acme\DemoBundle\Model\Categorie]
+
+
+    acme_demo.form.type.article:
+        class: Acme\DemoBundle\Form\Type\ArticleType
+        arguments:
+            - @request
+        tags:
+            -  { name: form.type, alias: acme_demo_article_type }
+        scope: request
+
+    # Form Type Article Factory
+    acme_demo.form.article:
+        factory_method: createNamed
+        factory_service: form.factory
+        class: Symfony\Component\Form\Form
+        arguments:
+            - article                             # name of the form
+            - acme_demo_article_type               # alias of the form type

@@ -1,12 +1,11 @@
-_welcome:
-    path:     /
-    defaults: { _controller: AcmeDemoBundle:Welcome:index }
+acme_demo_article_list:
+    path: /article/list
+    defaults: {_controller: AcmeDemoBundle:Article:list}
 
-_demo_secured:
-    resource: "@AcmeDemoBundle/Controller/SecuredController.php"
-    type:     annotation
+acme_demo_article_show:
+    path: /article/show/{id}
+    defaults: {_controller: AcmeDemoBundle:Article:show}
 
-_demo:
-    resource: "@AcmeDemoBundle/Controller/DemoController.php"
-    type:     annotation
-    prefix:   /demo
+acme_demo_article_add:
+    path: /article/add
+    defaults: {_controller: AcmeDemoBundle:Article:add}
