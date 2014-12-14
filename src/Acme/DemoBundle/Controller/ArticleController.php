@@ -38,6 +38,9 @@ class ArticleController extends Controller
     {
         $articleManager = $this->container->get('acme_demo_article_manager');
         $element        = $articleManager->findOneById($id);
+        //var_dump($element);
+        //exit;
+
         if (null === $element) {
             throw $this->createNotFoundException('Article not found');
         }

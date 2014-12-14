@@ -29,12 +29,8 @@ class ArticleType extends AbstractType
 
 
     /**
-     * @param Request $request
      */
-    public function __construct(
-        Request $request
-    ) {
-        $this->request = $request;
+    public function __construct() {
     }
 
 

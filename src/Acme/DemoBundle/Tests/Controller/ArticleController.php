@@ -2,6 +2,7 @@
 
 namespace Acme\DemoBundle\Tests\Controller;
 
+use Acme\DemoBundle\Model\Article;
 use atoum\AtoumBundle\Test\Units\WebTestCase;
 use atoum\AtoumBundle\Test\Controller\ControllerTest;
 
@@ -37,7 +38,7 @@ class ArticleController extends ControllerTest
     }
 
 
-    public function testShowErrorId()
+    /*public function testShowErrorId()
     {
         $this
             ->request(array('debug' => true))
@@ -48,8 +49,15 @@ class ArticleController extends ControllerTest
     }
 
 
-    /*public function testShowArticle()
+    public function testShowArticle()
     {
+        $client = static::createClient();
+
+        $articleManagerMock = \Mockery::mock('Acme\DemoBundle\Manager\ArticleManager');
+        $articleManagerMock->shouldReceive('findOneById')->once()->andReturn(new Article());
+
+        $client->getContainer()->set('acme_demo_article_manager', $articleManagerMock);
+
         $this
             ->request(array('debug' => true))
             ->GET('/article/show/1')
