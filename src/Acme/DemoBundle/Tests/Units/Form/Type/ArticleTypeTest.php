@@ -1,28 +1,27 @@
 <?php
 
-namespace Acme\DemoBundle\Tests\Units\Form\Type;
+namespace Acme\DemoBundle\Tests\Form\Type;
 
 use Acme\DemoBundle\Model\Article;
-use atoum\AtoumBundle\Test\Form;
+use atoum\AtoumBundle\Test\Form\FormTestCase;
 use Symfony\Component\HttpFoundation\Request;
-use Acme\DemoBundle\Form\Type\ArticleType as MyTypeToTest;
+use \Acme\DemoBundle\Form\Type\ArticleType as BaseArticleType;
 
-class ArticleTypeTest extends Form\FormTestCase
+class ArticleType extends FormTestCase
 {
-
 
     /**
      * @dataProvider formTypeDataProvider
      */
-    public function testFormType(Request $request)
+    public function testFormType()
     {
         $formData = array(
             'texte1' => 'test 1',
             'texte2' => 'test 2',
         );
 
-        $type = new MyTypeToTest();
-        $form = $this->factory->create($type);
+        $type = new BaseArticleType();
+        $form = $this->factory->createBuilder($type);
 
         $object = new Article();
         $object->fromArray($formData);
@@ -33,7 +32,7 @@ class ArticleTypeTest extends Form\FormTestCase
         $this->boolean($form->isSynchronized())->isTrue();
         $this->variable($object)->isEqualTo($form->getData());
 
-        $view     = $form->createView();
+        $view = $form->createView();
         $children = $view->children;
 
         foreach (array_keys($formData) as $key) {
@@ -51,5 +50,4 @@ class ArticleTypeTest extends Form\FormTestCase
 
         return $formData;
     }
-
 }
