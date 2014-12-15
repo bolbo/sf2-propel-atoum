@@ -16,8 +16,10 @@ class ArticleType extends FormTestCase
     public function testFormType()
     {
         $formData = array(
-            'texte1' => 'test 1',
-            'texte2' => 'test 2',
+            'code'         => 'AZER',
+            'intitule'     => 'Nouvel article',
+            'description'  => 'Description',
+            'categorie_id' => '1',
         );
 
         $type = new BaseArticleType();
@@ -32,7 +34,7 @@ class ArticleType extends FormTestCase
         $this->boolean($form->isSynchronized())->isTrue();
         $this->variable($object)->isEqualTo($form->getData());
 
-        $view = $form->createView();
+        $view     = $form->createView();
         $children = $view->children;
 
         foreach (array_keys($formData) as $key) {
@@ -43,11 +45,6 @@ class ArticleType extends FormTestCase
 
     public function formTypeDataProvider()
     {
-        $formData = array(
-            'texte1' => 'test 1',
-            'texte2' => 'test 2',
-        );
-
-        return $formData;
+        return array();
     }
 }
