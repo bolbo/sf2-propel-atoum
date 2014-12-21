@@ -835,134 +835,134 @@
 				<h3>Source</h3>
 				<table cellpadding="0" cellspacing="0" class="source">
 					<tr><th class="number">Line</th><th>Code</th></tr>
-					<tr><td class="number"><a name="isCsrfTokenValid"></a>1</td><td><pre>&lt;?php
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>2</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>3</td><td><pre>namespace Acme\DemoBundle\Model\om;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>4</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>5</td><td><pre>use \BaseObject;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>6</td><td><pre>use \BasePeer;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>7</td><td><pre>use \Criteria;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>8</td><td><pre>use \DateTime;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>9</td><td><pre>use \Exception;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>10</td><td><pre>use \PDO;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>11</td><td><pre>use \Persistent;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>12</td><td><pre>use \Propel;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>13</td><td><pre>use \PropelDateTime;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>14</td><td><pre>use \PropelException;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>15</td><td><pre>use \PropelPDO;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>16</td><td><pre>use Acme\DemoBundle\Model\Article;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>17</td><td><pre>use Acme\DemoBundle\Model\ArticlePeer;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>18</td><td><pre>use Acme\DemoBundle\Model\ArticleQuery;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>19</td><td><pre>use Acme\DemoBundle\Model\Categorie;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>20</td><td><pre>use Acme\DemoBundle\Model\CategorieQuery;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>21</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>22</td><td><pre>abstract class BaseArticle extends BaseObject implements Persistent
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>23</td><td><pre>{
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>24</td><td><pre>    /**
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>25</td><td><pre>     * Peer class name
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>26</td><td><pre>     */
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>27</td><td><pre>    const PEER = &#039;Acme\\DemoBundle\\Model\\ArticlePeer&#039;;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>28</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>29</td><td><pre>    /**
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>30</td><td><pre>     * The Peer class.
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>31</td><td><pre>     * Instance provides a convenient way of calling static methods on a class
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>32</td><td><pre>     * that calling code may not be able to identify.
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>33</td><td><pre>     * @var        ArticlePeer
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>34</td><td><pre>     */
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>35</td><td><pre>    protected static $peer;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>36</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>37</td><td><pre>    /**
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>38</td><td><pre>     * The flag var to prevent infinite loop in deep copy
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>39</td><td><pre>     * @var       boolean
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>40</td><td><pre>     */
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>41</td><td><pre>    protected $startCopy = false;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>42</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>43</td><td><pre>    /**
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>44</td><td><pre>     * The value for the id field.
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>45</td><td><pre>     * @var        int
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>46</td><td><pre>     */
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>47</td><td><pre>    protected $id;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>48</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>49</td><td><pre>    /**
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>50</td><td><pre>     * The value for the created_at field.
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>51</td><td><pre>     * @var        string
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>52</td><td><pre>     */
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>53</td><td><pre>    protected $created_at;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>54</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>55</td><td><pre>    /**
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>56</td><td><pre>     * The value for the updated_at field.
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>57</td><td><pre>     * @var        string
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>58</td><td><pre>     */
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>59</td><td><pre>    protected $updated_at;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>60</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>61</td><td><pre>    /**
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>62</td><td><pre>     * The value for the categorie_id field.
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>63</td><td><pre>     * @var        int
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>64</td><td><pre>     */
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>65</td><td><pre>    protected $categorie_id;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>66</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>67</td><td><pre>    /**
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>68</td><td><pre>     * The value for the code field.
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>69</td><td><pre>     * @var        string
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>70</td><td><pre>     */
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>71</td><td><pre>    protected $code;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>72</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>73</td><td><pre>    /**
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>74</td><td><pre>     * The value for the intitule field.
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>75</td><td><pre>     * @var        string
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>76</td><td><pre>     */
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>77</td><td><pre>    protected $intitule;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>78</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>79</td><td><pre>    /**
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>80</td><td><pre>     * The value for the description field.
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>81</td><td><pre>     * @var        string
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>82</td><td><pre>     */
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>83</td><td><pre>    protected $description;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>84</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>85</td><td><pre>    /**
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>86</td><td><pre>     * The value for the actif field.
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>87</td><td><pre>     * Note: this column has a database default value of: true
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>88</td><td><pre>     * @var        boolean
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>89</td><td><pre>     */
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>90</td><td><pre>    protected $actif;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>91</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>92</td><td><pre>    /**
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>93</td><td><pre>     * The value for the slug field.
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>94</td><td><pre>     * @var        string
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>95</td><td><pre>     */
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>96</td><td><pre>    protected $slug;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>97</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>98</td><td><pre>    /**
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>99</td><td><pre>     * @var        Categorie
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>100</td><td><pre>     */
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>101</td><td><pre>    protected $aCategorie;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>102</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>103</td><td><pre>    /**
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>104</td><td><pre>     * Flag to prevent endless save loop, if this object is referenced
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>105</td><td><pre>     * by another object which falls in this transaction.
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>106</td><td><pre>     * @var        boolean
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>107</td><td><pre>     */
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>108</td><td><pre>    protected $alreadyInSave = false;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>109</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>110</td><td><pre>    /**
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>111</td><td><pre>     * Flag to prevent endless validation loop, if this object is referenced
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>112</td><td><pre>     * by another object which falls in this transaction.
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>113</td><td><pre>     * @var        boolean
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>114</td><td><pre>     */
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>115</td><td><pre>    protected $alreadyInValidation = false;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>116</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>117</td><td><pre>    /**
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>118</td><td><pre>     * Flag to prevent endless clearAllReferences($deep=true) loop, if this object is referenced
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>119</td><td><pre>     * @var        boolean
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>120</td><td><pre>     */
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>121</td><td><pre>    protected $alreadyInClearAllReferencesDeep = false;
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>122</td><td><pre>
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>123</td><td><pre>    /**
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>124</td><td><pre>     * Applies default values to this object.
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>125</td><td><pre>     * This method should be called from the object&#039;s constructor (or
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>126</td><td><pre>     * equivalent initialization method).
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>127</td><td><pre>     * @see        __construct()
-</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>128</td><td><pre>     */
+					<tr><td class="number"><a name="count"></a>1</td><td><pre>&lt;?php
+</pre></td></tr><tr><td class="number"><a name="count"></a>2</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>3</td><td><pre>namespace Acme\DemoBundle\Model\om;
+</pre></td></tr><tr><td class="number"><a name="count"></a>4</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>5</td><td><pre>use \BaseObject;
+</pre></td></tr><tr><td class="number"><a name="count"></a>6</td><td><pre>use \BasePeer;
+</pre></td></tr><tr><td class="number"><a name="count"></a>7</td><td><pre>use \Criteria;
+</pre></td></tr><tr><td class="number"><a name="count"></a>8</td><td><pre>use \DateTime;
+</pre></td></tr><tr><td class="number"><a name="count"></a>9</td><td><pre>use \Exception;
+</pre></td></tr><tr><td class="number"><a name="count"></a>10</td><td><pre>use \PDO;
+</pre></td></tr><tr><td class="number"><a name="count"></a>11</td><td><pre>use \Persistent;
+</pre></td></tr><tr><td class="number"><a name="count"></a>12</td><td><pre>use \Propel;
+</pre></td></tr><tr><td class="number"><a name="count"></a>13</td><td><pre>use \PropelDateTime;
+</pre></td></tr><tr><td class="number"><a name="count"></a>14</td><td><pre>use \PropelException;
+</pre></td></tr><tr><td class="number"><a name="count"></a>15</td><td><pre>use \PropelPDO;
+</pre></td></tr><tr><td class="number"><a name="count"></a>16</td><td><pre>use Acme\DemoBundle\Model\Article;
+</pre></td></tr><tr><td class="number"><a name="count"></a>17</td><td><pre>use Acme\DemoBundle\Model\ArticlePeer;
+</pre></td></tr><tr><td class="number"><a name="count"></a>18</td><td><pre>use Acme\DemoBundle\Model\ArticleQuery;
+</pre></td></tr><tr><td class="number"><a name="count"></a>19</td><td><pre>use Acme\DemoBundle\Model\Categorie;
+</pre></td></tr><tr><td class="number"><a name="count"></a>20</td><td><pre>use Acme\DemoBundle\Model\CategorieQuery;
+</pre></td></tr><tr><td class="number"><a name="count"></a>21</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>22</td><td><pre>abstract class BaseArticle extends BaseObject implements Persistent
+</pre></td></tr><tr><td class="number"><a name="count"></a>23</td><td><pre>{
+</pre></td></tr><tr><td class="number"><a name="count"></a>24</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="count"></a>25</td><td><pre>     * Peer class name
+</pre></td></tr><tr><td class="number"><a name="count"></a>26</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="count"></a>27</td><td><pre>    const PEER = &#039;Acme\\DemoBundle\\Model\\ArticlePeer&#039;;
+</pre></td></tr><tr><td class="number"><a name="count"></a>28</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>29</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="count"></a>30</td><td><pre>     * The Peer class.
+</pre></td></tr><tr><td class="number"><a name="count"></a>31</td><td><pre>     * Instance provides a convenient way of calling static methods on a class
+</pre></td></tr><tr><td class="number"><a name="count"></a>32</td><td><pre>     * that calling code may not be able to identify.
+</pre></td></tr><tr><td class="number"><a name="count"></a>33</td><td><pre>     * @var        ArticlePeer
+</pre></td></tr><tr><td class="number"><a name="count"></a>34</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="count"></a>35</td><td><pre>    protected static $peer;
+</pre></td></tr><tr><td class="number"><a name="count"></a>36</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>37</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="count"></a>38</td><td><pre>     * The flag var to prevent infinite loop in deep copy
+</pre></td></tr><tr><td class="number"><a name="count"></a>39</td><td><pre>     * @var       boolean
+</pre></td></tr><tr><td class="number"><a name="count"></a>40</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="count"></a>41</td><td><pre>    protected $startCopy = false;
+</pre></td></tr><tr><td class="number"><a name="count"></a>42</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>43</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="count"></a>44</td><td><pre>     * The value for the id field.
+</pre></td></tr><tr><td class="number"><a name="count"></a>45</td><td><pre>     * @var        int
+</pre></td></tr><tr><td class="number"><a name="count"></a>46</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="count"></a>47</td><td><pre>    protected $id;
+</pre></td></tr><tr><td class="number"><a name="count"></a>48</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>49</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="count"></a>50</td><td><pre>     * The value for the created_at field.
+</pre></td></tr><tr><td class="number"><a name="count"></a>51</td><td><pre>     * @var        string
+</pre></td></tr><tr><td class="number"><a name="count"></a>52</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="count"></a>53</td><td><pre>    protected $created_at;
+</pre></td></tr><tr><td class="number"><a name="count"></a>54</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>55</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="count"></a>56</td><td><pre>     * The value for the updated_at field.
+</pre></td></tr><tr><td class="number"><a name="count"></a>57</td><td><pre>     * @var        string
+</pre></td></tr><tr><td class="number"><a name="count"></a>58</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="count"></a>59</td><td><pre>    protected $updated_at;
+</pre></td></tr><tr><td class="number"><a name="count"></a>60</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>61</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="count"></a>62</td><td><pre>     * The value for the categorie_id field.
+</pre></td></tr><tr><td class="number"><a name="count"></a>63</td><td><pre>     * @var        int
+</pre></td></tr><tr><td class="number"><a name="count"></a>64</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="count"></a>65</td><td><pre>    protected $categorie_id;
+</pre></td></tr><tr><td class="number"><a name="count"></a>66</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>67</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="count"></a>68</td><td><pre>     * The value for the code field.
+</pre></td></tr><tr><td class="number"><a name="count"></a>69</td><td><pre>     * @var        string
+</pre></td></tr><tr><td class="number"><a name="count"></a>70</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="count"></a>71</td><td><pre>    protected $code;
+</pre></td></tr><tr><td class="number"><a name="count"></a>72</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>73</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="count"></a>74</td><td><pre>     * The value for the intitule field.
+</pre></td></tr><tr><td class="number"><a name="count"></a>75</td><td><pre>     * @var        string
+</pre></td></tr><tr><td class="number"><a name="count"></a>76</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="count"></a>77</td><td><pre>    protected $intitule;
+</pre></td></tr><tr><td class="number"><a name="count"></a>78</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>79</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="count"></a>80</td><td><pre>     * The value for the description field.
+</pre></td></tr><tr><td class="number"><a name="count"></a>81</td><td><pre>     * @var        string
+</pre></td></tr><tr><td class="number"><a name="count"></a>82</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="count"></a>83</td><td><pre>    protected $description;
+</pre></td></tr><tr><td class="number"><a name="count"></a>84</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>85</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="count"></a>86</td><td><pre>     * The value for the actif field.
+</pre></td></tr><tr><td class="number"><a name="count"></a>87</td><td><pre>     * Note: this column has a database default value of: true
+</pre></td></tr><tr><td class="number"><a name="count"></a>88</td><td><pre>     * @var        boolean
+</pre></td></tr><tr><td class="number"><a name="count"></a>89</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="count"></a>90</td><td><pre>    protected $actif;
+</pre></td></tr><tr><td class="number"><a name="count"></a>91</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>92</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="count"></a>93</td><td><pre>     * The value for the slug field.
+</pre></td></tr><tr><td class="number"><a name="count"></a>94</td><td><pre>     * @var        string
+</pre></td></tr><tr><td class="number"><a name="count"></a>95</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="count"></a>96</td><td><pre>    protected $slug;
+</pre></td></tr><tr><td class="number"><a name="count"></a>97</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>98</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="count"></a>99</td><td><pre>     * @var        Categorie
+</pre></td></tr><tr><td class="number"><a name="count"></a>100</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="count"></a>101</td><td><pre>    protected $aCategorie;
+</pre></td></tr><tr><td class="number"><a name="count"></a>102</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>103</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="count"></a>104</td><td><pre>     * Flag to prevent endless save loop, if this object is referenced
+</pre></td></tr><tr><td class="number"><a name="count"></a>105</td><td><pre>     * by another object which falls in this transaction.
+</pre></td></tr><tr><td class="number"><a name="count"></a>106</td><td><pre>     * @var        boolean
+</pre></td></tr><tr><td class="number"><a name="count"></a>107</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="count"></a>108</td><td><pre>    protected $alreadyInSave = false;
+</pre></td></tr><tr><td class="number"><a name="count"></a>109</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>110</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="count"></a>111</td><td><pre>     * Flag to prevent endless validation loop, if this object is referenced
+</pre></td></tr><tr><td class="number"><a name="count"></a>112</td><td><pre>     * by another object which falls in this transaction.
+</pre></td></tr><tr><td class="number"><a name="count"></a>113</td><td><pre>     * @var        boolean
+</pre></td></tr><tr><td class="number"><a name="count"></a>114</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="count"></a>115</td><td><pre>    protected $alreadyInValidation = false;
+</pre></td></tr><tr><td class="number"><a name="count"></a>116</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>117</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="count"></a>118</td><td><pre>     * Flag to prevent endless clearAllReferences($deep=true) loop, if this object is referenced
+</pre></td></tr><tr><td class="number"><a name="count"></a>119</td><td><pre>     * @var        boolean
+</pre></td></tr><tr><td class="number"><a name="count"></a>120</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="count"></a>121</td><td><pre>    protected $alreadyInClearAllReferencesDeep = false;
+</pre></td></tr><tr><td class="number"><a name="count"></a>122</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>123</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="count"></a>124</td><td><pre>     * Applies default values to this object.
+</pre></td></tr><tr><td class="number"><a name="count"></a>125</td><td><pre>     * This method should be called from the object&#039;s constructor (or
+</pre></td></tr><tr><td class="number"><a name="count"></a>126</td><td><pre>     * equivalent initialization method).
+</pre></td></tr><tr><td class="number"><a name="count"></a>127</td><td><pre>     * @see        __construct()
+</pre></td></tr><tr><td class="number"><a name="count"></a>128</td><td><pre>     */
 </pre></td></tr><tr><td class="number"><a name="applyDefaultValues"></a>129</td><td><pre>    public function applyDefaultValues()
 </pre></td></tr><tr><td class="number"><a name="applyDefaultValues"></a>130</td><td><pre>    {
 </pre></td></tr><tr class="covered"><td class="number">131</td><td><pre>        $this-&gt;actif = true;

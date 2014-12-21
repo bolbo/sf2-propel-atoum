@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Language" content="en" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>sf2-propel-atoum : code coverage of Acme\DemoBundle\Manager\BaseManager</title>
+		<link rel="stylesheet" media="screen" type="text/css" href="../../../screen.css" title="Screen" />
+	</head>
+	<body>
+		<div id="header">
+			<h1>Code coverage of <a href="../../../index.html">sf2-propel-atoum</a>: Acme\DemoBundle\Manager\BaseManager</h1>
+			<h2>Class code coverage <span>2.33%</span></h2>
+		</div>
+		<div id="page">
+			<div id="content">
+				<h3>Methods</h3>
+				<ul class="summary">
+					
+						
+							<li>
+								
+								
+									<div class="bar">
+										<div class="background"></div>
+										<div class="graph" style="width: 100%"></div>
+										<div class="label">
+											<span class="percent">100%</span>
+											<a href="#__construct">__construct</a>
+										</div>
+									</div>
+								
+							</li>
+						
+							<li>
+								
+								
+									<div class="bar">
+										<div class="background"></div>
+										<div class="graph" style="width: 0%"></div>
+										<div class="label">
+											<span class="percent">0%</span>
+											<a href="#create">create</a>
+										</div>
+									</div>
+								
+							</li>
+						
+							<li>
+								
+								
+									<div class="bar">
+										<div class="background"></div>
+										<div class="graph" style="width: 0%"></div>
+										<div class="label">
+											<span class="percent">0%</span>
+											<a href="#createQuery">createQuery</a>
+										</div>
+									</div>
+								
+							</li>
+						
+							<li>
+								
+								
+									<div class="bar">
+										<div class="background"></div>
+										<div class="graph" style="width: 0%"></div>
+										<div class="label">
+											<span class="percent">0%</span>
+											<a href="#getClass">getClass</a>
+										</div>
+									</div>
+								
+							</li>
+						
+							<li>
+								
+								
+									<div class="bar">
+										<div class="background"></div>
+										<div class="graph" style="width: 0%"></div>
+										<div class="label">
+											<span class="percent">0%</span>
+											<a href="#findAll">findAll</a>
+										</div>
+									</div>
+								
+							</li>
+						
+							<li>
+								
+								
+									<div class="bar">
+										<div class="background"></div>
+										<div class="graph" style="width: 0%"></div>
+										<div class="label">
+											<span class="percent">0%</span>
+											<a href="#findOneById">findOneById</a>
+										</div>
+									</div>
+								
+							</li>
+						
+							<li>
+								
+								
+									<div class="bar">
+										<div class="background"></div>
+										<div class="graph" style="width: 0%"></div>
+										<div class="label">
+											<span class="percent">0%</span>
+											<a href="#findOneBy">findOneBy</a>
+										</div>
+									</div>
+								
+							</li>
+						
+							<li>
+								
+								
+									<div class="bar">
+										<div class="background"></div>
+										<div class="graph" style="width: 0%"></div>
+										<div class="label">
+											<span class="percent">0%</span>
+											<a href="#findBy">findBy</a>
+										</div>
+									</div>
+								
+							</li>
+						
+							<li>
+								
+								
+									<div class="bar">
+										<div class="background"></div>
+										<div class="graph" style="width: 0%"></div>
+										<div class="label">
+											<span class="percent">0%</span>
+											<a href="#count">count</a>
+										</div>
+									</div>
+								
+							</li>
+						
+					
+				</ul>
+				<h3>Source</h3>
+				<table cellpadding="0" cellspacing="0" class="source">
+					<tr><th class="number">Line</th><th>Code</th></tr>
+					<tr><td class="number"><a name="save"></a>1</td><td><pre>&lt;?php
+</pre></td></tr><tr><td class="number"><a name="save"></a>2</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="save"></a>3</td><td><pre>/**
+</pre></td></tr><tr><td class="number"><a name="save"></a>4</td><td><pre> * BaseManager.php
+</pre></td></tr><tr><td class="number"><a name="save"></a>5</td><td><pre> *
+</pre></td></tr><tr><td class="number"><a name="save"></a>6</td><td><pre> * PHP version 5
+</pre></td></tr><tr><td class="number"><a name="save"></a>7</td><td><pre> *
+</pre></td></tr><tr><td class="number"><a name="save"></a>8</td><td><pre> */
+</pre></td></tr><tr><td class="number"><a name="save"></a>9</td><td><pre>namespace Acme\DemoBundle\Manager;
+</pre></td></tr><tr><td class="number"><a name="save"></a>10</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="save"></a>11</td><td><pre>/**
+</pre></td></tr><tr><td class="number"><a name="save"></a>12</td><td><pre> * Base Manager
+</pre></td></tr><tr><td class="number"><a name="save"></a>13</td><td><pre> *
+</pre></td></tr><tr><td class="number"><a name="save"></a>14</td><td><pre> * PHP version 5
+</pre></td></tr><tr><td class="number"><a name="save"></a>15</td><td><pre> *
+</pre></td></tr><tr><td class="number"><a name="save"></a>16</td><td><pre> */
+</pre></td></tr><tr><td class="number"><a name="save"></a>17</td><td><pre>abstract class BaseManager
+</pre></td></tr><tr><td class="number"><a name="save"></a>18</td><td><pre>{
+</pre></td></tr><tr><td class="number"><a name="save"></a>19</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="save"></a>20</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="save"></a>21</td><td><pre>     * @var string class name
+</pre></td></tr><tr><td class="number"><a name="save"></a>22</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="save"></a>23</td><td><pre>    protected $class;
+</pre></td></tr><tr><td class="number"><a name="save"></a>24</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="save"></a>25</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="save"></a>26</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="save"></a>27</td><td><pre>     * @param string $class class name
+</pre></td></tr><tr><td class="number"><a name="save"></a>28</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="__construct"></a>29</td><td><pre>    public function __construct($class)
+</pre></td></tr><tr><td class="number"><a name="__construct"></a>30</td><td><pre>    {
+</pre></td></tr><tr class="covered"><td class="number">31</td><td><pre>        $this-&gt;class = $class;
+</pre></td></tr><tr class="covered"><td class="number">32</td><td><pre>    }
+</pre></td></tr><tr><td class="number"><a name="__construct"></a>33</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="__construct"></a>34</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="__construct"></a>35</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="__construct"></a>36</td><td><pre>     * @return mixed
+</pre></td></tr><tr><td class="number"><a name="__construct"></a>37</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="create"></a>38</td><td><pre>    public function create()
+</pre></td></tr><tr><td class="number"><a name="create"></a>39</td><td><pre>    {
+</pre></td></tr><tr class="notCovered"><td class="number">40</td><td><pre>        $class = $this-&gt;getClass();
+</pre></td></tr><tr><td class="number"><a name="create"></a>41</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">42</td><td><pre>        return new $class();
+</pre></td></tr><tr><td class="number"><a name="create"></a>43</td><td><pre>    }
+</pre></td></tr><tr><td class="number"><a name="create"></a>44</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="create"></a>45</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="create"></a>46</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="create"></a>47</td><td><pre>     * create propel query
+</pre></td></tr><tr><td class="number"><a name="create"></a>48</td><td><pre>     *
+</pre></td></tr><tr><td class="number"><a name="create"></a>49</td><td><pre>     * @return \ModelCriteria
+</pre></td></tr><tr><td class="number"><a name="create"></a>50</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="createQuery"></a>51</td><td><pre>    protected function createQuery()
+</pre></td></tr><tr><td class="number"><a name="createQuery"></a>52</td><td><pre>    {
+</pre></td></tr><tr class="notCovered"><td class="number">53</td><td><pre>        return \PropelQuery::from($this-&gt;class);
+</pre></td></tr><tr><td class="number"><a name="createQuery"></a>54</td><td><pre>    }
+</pre></td></tr><tr><td class="number"><a name="createQuery"></a>55</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="createQuery"></a>56</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="createQuery"></a>57</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="createQuery"></a>58</td><td><pre>     * get class name
+</pre></td></tr><tr><td class="number"><a name="createQuery"></a>59</td><td><pre>     *
+</pre></td></tr><tr><td class="number"><a name="createQuery"></a>60</td><td><pre>     * @return string
+</pre></td></tr><tr><td class="number"><a name="createQuery"></a>61</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="getClass"></a>62</td><td><pre>    public function getClass()
+</pre></td></tr><tr><td class="number"><a name="getClass"></a>63</td><td><pre>    {
+</pre></td></tr><tr class="notCovered"><td class="number">64</td><td><pre>        return $this-&gt;class;
+</pre></td></tr><tr><td class="number"><a name="getClass"></a>65</td><td><pre>    }
+</pre></td></tr><tr><td class="number"><a name="getClass"></a>66</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="getClass"></a>67</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="getClass"></a>68</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="getClass"></a>69</td><td><pre>     * List all elements
+</pre></td></tr><tr><td class="number"><a name="getClass"></a>70</td><td><pre>     *
+</pre></td></tr><tr><td class="number"><a name="getClass"></a>71</td><td><pre>     * @param null   $sortByField
+</pre></td></tr><tr><td class="number"><a name="getClass"></a>72</td><td><pre>     * @param string $sortOrder
+</pre></td></tr><tr><td class="number"><a name="getClass"></a>73</td><td><pre>     * @param bool   $pagination
+</pre></td></tr><tr><td class="number"><a name="getClass"></a>74</td><td><pre>     * @param int    $page
+</pre></td></tr><tr><td class="number"><a name="getClass"></a>75</td><td><pre>     * @param int    $maxPerPage
+</pre></td></tr><tr><td class="number"><a name="getClass"></a>76</td><td><pre>     *
+</pre></td></tr><tr><td class="number"><a name="getClass"></a>77</td><td><pre>     * @return mixed
+</pre></td></tr><tr><td class="number"><a name="getClass"></a>78</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>79</td><td><pre>    public function findAll(
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>80</td><td><pre>        $sortByField = null,
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>81</td><td><pre>        $sortOrder = &#039;asc&#039;,
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>82</td><td><pre>        $pagination = false,
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>83</td><td><pre>        $page = 1,
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>84</td><td><pre>        $maxPerPage = 10
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>85</td><td><pre>    ) {
+</pre></td></tr><tr class="notCovered"><td class="number">86</td><td><pre>        $query = $this-&gt;createQuery();
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>87</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>88</td><td><pre>        // sortOrder
+</pre></td></tr><tr class="notCovered"><td class="number">89</td><td><pre>        if (null !== $sortByField) {
+</pre></td></tr><tr class="notCovered"><td class="number">90</td><td><pre>            $query-&gt;orderBy($sortByField, $sortOrder);
+</pre></td></tr><tr class="notCovered"><td class="number">91</td><td><pre>        }
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>92</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>93</td><td><pre>        // Pagination
+</pre></td></tr><tr class="notCovered"><td class="number">94</td><td><pre>        if (false === $pagination) {
+</pre></td></tr><tr class="notCovered"><td class="number">95</td><td><pre>            $element = $query-&gt;find();
+</pre></td></tr><tr class="notCovered"><td class="number">96</td><td><pre>        } else {
+</pre></td></tr><tr class="notCovered"><td class="number">97</td><td><pre>            $element = $query-&gt;paginate($page, $maxPerPage);
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>98</td><td><pre>        }
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>99</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">100</td><td><pre>        return $element;
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>101</td><td><pre>    }
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>102</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>103</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>104</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>105</td><td><pre>     * @param int $id
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>106</td><td><pre>     *
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>107</td><td><pre>     * @return mixed
+</pre></td></tr><tr><td class="number"><a name="findAll"></a>108</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="findOneById"></a>109</td><td><pre>    public function findOneById($id)
+</pre></td></tr><tr><td class="number"><a name="findOneById"></a>110</td><td><pre>    {
+</pre></td></tr><tr class="notCovered"><td class="number">111</td><td><pre>        return $this-&gt;findOneBy(array(&#039;id&#039; =&gt; $id));
+</pre></td></tr><tr><td class="number"><a name="findOneById"></a>112</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="findOneById"></a>113</td><td><pre>    }
+</pre></td></tr><tr><td class="number"><a name="findOneById"></a>114</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="findOneById"></a>115</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="findOneById"></a>116</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="findOneById"></a>117</td><td><pre>     * @param array $criteria     Element filtre
+</pre></td></tr><tr><td class="number"><a name="findOneById"></a>118</td><td><pre>     * @param array $joinCriteria Element filtre sur table croisee
+</pre></td></tr><tr><td class="number"><a name="findOneById"></a>119</td><td><pre>     *
+</pre></td></tr><tr><td class="number"><a name="findOneById"></a>120</td><td><pre>     * @return mixed
+</pre></td></tr><tr><td class="number"><a name="findOneById"></a>121</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>122</td><td><pre>    public function findOneBy(array $criteria, array $joinCriteria = null)
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>123</td><td><pre>    {
+</pre></td></tr><tr class="notCovered"><td class="number">124</td><td><pre>        $query = $this-&gt;createQuery();
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>125</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">126</td><td><pre>        foreach ($criteria as $field =&gt; $value) {
+</pre></td></tr><tr class="notCovered"><td class="number">127</td><td><pre>            $method = &#039;filterBy&#039;.ucfirst($field);
+</pre></td></tr><tr class="notCovered"><td class="number">128</td><td><pre>            $query-&gt;$method($value);
+</pre></td></tr><tr class="notCovered"><td class="number">129</td><td><pre>        }
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>130</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">131</td><td><pre>        if (!is_null($joinCriteria)) {
+</pre></td></tr><tr class="notCovered"><td class="number">132</td><td><pre>            foreach ($joinCriteria as $joinCriteriaElement) {
+</pre></td></tr><tr class="notCovered"><td class="number">133</td><td><pre>                if (isset($joinCriteriaElement[&#039;table&#039;]) &amp;&amp; $joinCriteriaElement[&#039;table&#039;] != &#039;&#039;
+</pre></td></tr><tr class="notCovered"><td class="number">134</td><td><pre>                    &amp;&amp; isset($joinCriteriaElement[&#039;field&#039;]) &amp;&amp; $joinCriteriaElement[&#039;field&#039;] != &#039;&#039;
+</pre></td></tr><tr class="notCovered"><td class="number">135</td><td><pre>                    &amp;&amp; isset($joinCriteriaElement[&#039;value&#039;]) &amp;&amp; $joinCriteriaElement[&#039;value&#039;] != &#039;&#039;
+</pre></td></tr><tr class="notCovered"><td class="number">136</td><td><pre>                ) {
+</pre></td></tr><tr class="notCovered"><td class="number">137</td><td><pre>                    $tableQuery = &#039;use&#039;.ucfirst($joinCriteriaElement[&#039;table&#039;]).&#039;Query&#039;;
+</pre></td></tr><tr class="notCovered"><td class="number">138</td><td><pre>                    $method     = &#039;filterBy&#039;.ucfirst($joinCriteriaElement[&#039;field&#039;]);
+</pre></td></tr><tr class="notCovered"><td class="number">139</td><td><pre>                    $value      = $joinCriteriaElement[&#039;value&#039;];
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>140</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">141</td><td><pre>                    $query-&gt;$tableQuery()
+</pre></td></tr><tr class="notCovered"><td class="number">142</td><td><pre>                          -&gt;$method(
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>143</td><td><pre>                              $value
+</pre></td></tr><tr class="notCovered"><td class="number">144</td><td><pre>                          )
+</pre></td></tr><tr class="notCovered"><td class="number">145</td><td><pre>                          -&gt;endUse();
+</pre></td></tr><tr class="notCovered"><td class="number">146</td><td><pre>                }
+</pre></td></tr><tr class="notCovered"><td class="number">147</td><td><pre>            }
+</pre></td></tr><tr class="notCovered"><td class="number">148</td><td><pre>        }
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>149</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">150</td><td><pre>        $element = $query-&gt;findOne();
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>151</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">152</td><td><pre>        return $element;
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>153</td><td><pre>    }
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>154</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>155</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>156</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>157</td><td><pre>     * search
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>158</td><td><pre>     *
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>159</td><td><pre>     * @see http://propelorm.org/Propel/documentation/03-basic-crud.html
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>160</td><td><pre>     *
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>161</td><td><pre>     * @param array  $criteria
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>162</td><td><pre>     * @param null   $sortByField
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>163</td><td><pre>     * @param string $sortOrder
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>164</td><td><pre>     * @param bool   $pagination
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>165</td><td><pre>     * @param int    $page
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>166</td><td><pre>     * @param int    $maxPerPage
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>167</td><td><pre>     * @param array  $joinCriteria
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>168</td><td><pre>     *
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>169</td><td><pre>     * @return array|mixed|\PropelModelPager|\PropelObjectCollection
+</pre></td></tr><tr><td class="number"><a name="findOneBy"></a>170</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>171</td><td><pre>    public function findBy(
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>172</td><td><pre>        array $criteria,
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>173</td><td><pre>        $sortByField = null,
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>174</td><td><pre>        $sortOrder = &#039;asc&#039;,
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>175</td><td><pre>        $pagination = false,
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>176</td><td><pre>        $page = 1,
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>177</td><td><pre>        $maxPerPage = 10,
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>178</td><td><pre>        array $joinCriteria = null
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>179</td><td><pre>    ) {
+</pre></td></tr><tr class="notCovered"><td class="number">180</td><td><pre>        $query = $this-&gt;createQuery();
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>181</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">182</td><td><pre>        foreach ($criteria as $field =&gt; $value) {
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>183</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">184</td><td><pre>            if ($field == &#039;periode&#039;) {
+</pre></td></tr><tr class="notCovered"><td class="number">185</td><td><pre>                $query-&gt;filterByCreatedAt(
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>186</td><td><pre>                    array(
+</pre></td></tr><tr class="notCovered"><td class="number">187</td><td><pre>                        &quot;min&quot; =&gt; $value[&#039;min&#039;]-&gt;format(&#039;Y-m-d H:i:s&#039;),
+</pre></td></tr><tr class="notCovered"><td class="number">188</td><td><pre>                        &quot;max&quot; =&gt; $value[&#039;max&#039;]-&gt;format(&#039;Y-m-d H:i:s&#039;),
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>189</td><td><pre>                    )
+</pre></td></tr><tr class="notCovered"><td class="number">190</td><td><pre>                );
+</pre></td></tr><tr class="notCovered"><td class="number">191</td><td><pre>            } else {
+</pre></td></tr><tr class="notCovered"><td class="number">192</td><td><pre>                $method = &#039;filterBy&#039;.ucfirst($field);
+</pre></td></tr><tr class="notCovered"><td class="number">193</td><td><pre>                $query-&gt;$method($value);
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>194</td><td><pre>            }
+</pre></td></tr><tr class="notCovered"><td class="number">195</td><td><pre>        }
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>196</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">197</td><td><pre>        if (!is_null($joinCriteria)) {
+</pre></td></tr><tr class="notCovered"><td class="number">198</td><td><pre>            foreach ($joinCriteria as $joinCriteriaElement) {
+</pre></td></tr><tr class="notCovered"><td class="number">199</td><td><pre>                if (isset($joinCriteriaElement[&#039;table&#039;]) &amp;&amp; $joinCriteriaElement[&#039;table&#039;] != &#039;&#039;
+</pre></td></tr><tr class="notCovered"><td class="number">200</td><td><pre>                    &amp;&amp; isset($joinCriteriaElement[&#039;field&#039;]) &amp;&amp; $joinCriteriaElement[&#039;field&#039;] != &#039;&#039;
+</pre></td></tr><tr class="notCovered"><td class="number">201</td><td><pre>                    &amp;&amp; isset($joinCriteriaElement[&#039;value&#039;]) &amp;&amp; $joinCriteriaElement[&#039;value&#039;] != &#039;&#039;
+</pre></td></tr><tr class="notCovered"><td class="number">202</td><td><pre>                ) {
+</pre></td></tr><tr class="notCovered"><td class="number">203</td><td><pre>                    $tableQuery = &#039;use&#039;.ucfirst($joinCriteriaElement[&#039;table&#039;]).&#039;Query&#039;;
+</pre></td></tr><tr class="notCovered"><td class="number">204</td><td><pre>                    $method     = &#039;filterBy&#039;.ucfirst($joinCriteriaElement[&#039;field&#039;]);
+</pre></td></tr><tr class="notCovered"><td class="number">205</td><td><pre>                    $value      = $joinCriteriaElement[&#039;value&#039;];
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>206</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">207</td><td><pre>                    $query-&gt;$tableQuery()
+</pre></td></tr><tr class="notCovered"><td class="number">208</td><td><pre>                          -&gt;$method(
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>209</td><td><pre>                              $value
+</pre></td></tr><tr class="notCovered"><td class="number">210</td><td><pre>                          )
+</pre></td></tr><tr class="notCovered"><td class="number">211</td><td><pre>                          -&gt;endUse();
+</pre></td></tr><tr class="notCovered"><td class="number">212</td><td><pre>                }
+</pre></td></tr><tr class="notCovered"><td class="number">213</td><td><pre>            }
+</pre></td></tr><tr class="notCovered"><td class="number">214</td><td><pre>        }
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>215</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>216</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>217</td><td><pre>        // sortOrder
+</pre></td></tr><tr class="notCovered"><td class="number">218</td><td><pre>        if (null !== $sortByField) {
+</pre></td></tr><tr class="notCovered"><td class="number">219</td><td><pre>            if (is_string($sortByField)) {
+</pre></td></tr><tr class="notCovered"><td class="number">220</td><td><pre>                $query-&gt;orderBy($sortByField, $sortOrder);
+</pre></td></tr><tr class="notCovered"><td class="number">221</td><td><pre>            } else if (is_array($sortByField)) {
+</pre></td></tr><tr class="notCovered"><td class="number">222</td><td><pre>                foreach ($sortByField as $sort) {
+</pre></td></tr><tr class="notCovered"><td class="number">223</td><td><pre>                    $query-&gt;orderBy($sort, $sortOrder);
+</pre></td></tr><tr class="notCovered"><td class="number">224</td><td><pre>                }
+</pre></td></tr><tr class="notCovered"><td class="number">225</td><td><pre>            }
+</pre></td></tr><tr class="notCovered"><td class="number">226</td><td><pre>        }
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>227</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>228</td><td><pre>        // Pagination
+</pre></td></tr><tr class="notCovered"><td class="number">229</td><td><pre>        if (false === $pagination) {
+</pre></td></tr><tr class="notCovered"><td class="number">230</td><td><pre>            $element = $query-&gt;find();
+</pre></td></tr><tr class="notCovered"><td class="number">231</td><td><pre>        } else {
+</pre></td></tr><tr class="notCovered"><td class="number">232</td><td><pre>            $element = $query-&gt;paginate($page, $maxPerPage);
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>233</td><td><pre>        }
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>234</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">235</td><td><pre>        return $element;
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>236</td><td><pre>    }
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>237</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>238</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>239</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>240</td><td><pre>     * get number of results corresponding to criteria
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>241</td><td><pre>     *
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>242</td><td><pre>     * This is much faster than counting the results of a find()
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>243</td><td><pre>     * since count() doesn&#039;t populate Model object
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>244</td><td><pre>     *
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>245</td><td><pre>     * @param array $criteria
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>246</td><td><pre>     *
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>247</td><td><pre>     * @return int
+</pre></td></tr><tr><td class="number"><a name="findBy"></a>248</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="count"></a>249</td><td><pre>    public function count(array $criteria)
+</pre></td></tr><tr><td class="number"><a name="count"></a>250</td><td><pre>    {
+</pre></td></tr><tr class="notCovered"><td class="number">251</td><td><pre>        $query = $this-&gt;createQuery();
+</pre></td></tr><tr><td class="number"><a name="count"></a>252</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">253</td><td><pre>        foreach ($criteria as $field =&gt; $value) {
+</pre></td></tr><tr class="notCovered"><td class="number">254</td><td><pre>            $method = &#039;filterBy&#039;.ucfirst($field);
+</pre></td></tr><tr class="notCovered"><td class="number">255</td><td><pre>            $query-&gt;$method($value);
+</pre></td></tr><tr class="notCovered"><td class="number">256</td><td><pre>        }
+</pre></td></tr><tr><td class="number"><a name="count"></a>257</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">258</td><td><pre>        return $query-&gt;count();
+</pre></td></tr><tr><td class="number"><a name="count"></a>259</td><td><pre>    }
+</pre></td></tr><tr><td class="number"><a name="count"></a>260</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="count"></a>261</td><td><pre>}
+</pre></td></tr>
+				</table>
+			</div>
+		</div>
+		<div id="footer">
+			<p>Code coverage report powered by <a href="http://atoum.org">atoum</a></p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Language" content="en" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>sf2-propel-atoum : code coverage of Acme\DemoBundle\Form\Type\ArticleType</title>
+		<link rel="stylesheet" media="screen" type="text/css" href="../../../../screen.css" title="Screen" />
+	</head>
+	<body>
+		<div id="header">
+			<h1>Code coverage of <a href="../../../../index.html">sf2-propel-atoum</a>: Acme\DemoBundle\Form\Type\ArticleType</h1>
+			<h2>Class code coverage <span>0%</span></h2>
+		</div>
+		<div id="page">
+			<div id="content">
+				<h3>Methods</h3>
+				<ul class="summary">
+					
+						
+							<li>
+								
+								
+									<div class="bar">
+										<div class="background"></div>
+										<div class="graph" style="width: 0%"></div>
+										<div class="label">
+											<span class="percent">0%</span>
+											<a href="#__construct">__construct</a>
+										</div>
+									</div>
+								
+							</li>
+						
+							<li>
+								
+								
+									<div class="bar">
+										<div class="background"></div>
+										<div class="graph" style="width: 0%"></div>
+										<div class="label">
+											<span class="percent">0%</span>
+											<a href="#buildForm">buildForm</a>
+										</div>
+									</div>
+								
+							</li>
+						
+							<li>
+								
+								
+									<div class="bar">
+										<div class="background"></div>
+										<div class="graph" style="width: 0%"></div>
+										<div class="label">
+											<span class="percent">0%</span>
+											<a href="#setDefaultOptions">setDefaultOptions</a>
+										</div>
+									</div>
+								
+							</li>
+						
+							<li>
+								
+								
+									<div class="bar">
+										<div class="background"></div>
+										<div class="graph" style="width: 0%"></div>
+										<div class="label">
+											<span class="percent">0%</span>
+											<a href="#getName">getName</a>
+										</div>
+									</div>
+								
+							</li>
+						
+					
+				</ul>
+				<h3>Source</h3>
+				<table cellpadding="0" cellspacing="0" class="source">
+					<tr><th class="number">Line</th><th>Code</th></tr>
+					<tr><td class="number"><a name="isCsrfTokenValid"></a>1</td><td><pre>&lt;?php
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>2</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>3</td><td><pre>/**
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>4</td><td><pre> * ArticleType.php
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>5</td><td><pre> *
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>6</td><td><pre> * PHP version 5
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>7</td><td><pre> *
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>8</td><td><pre> */
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>9</td><td><pre>namespace Acme\DemoBundle\Form\Type;
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>10</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>11</td><td><pre>use Symfony\Component\Form\AbstractType;
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>12</td><td><pre>use Symfony\Component\Form\FormBuilderInterface;
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>13</td><td><pre>use Symfony\Component\HttpFoundation\Request;
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>14</td><td><pre>use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>15</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>16</td><td><pre>/**
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>17</td><td><pre> * Formulaire Article
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>18</td><td><pre> *
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>19</td><td><pre> * PHP version 5
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>20</td><td><pre> *
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>21</td><td><pre> */
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>22</td><td><pre>class ArticleType extends AbstractType
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>23</td><td><pre>{
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>24</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>25</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>26</td><td><pre>     * @var Request
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>27</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>28</td><td><pre>    protected $request;
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>29</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>30</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>31</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="isCsrfTokenValid"></a>32</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="__construct"></a>33</td><td><pre>    public function __construct() {
+</pre></td></tr><tr class="notCovered"><td class="number">34</td><td><pre>    }
+</pre></td></tr><tr><td class="number"><a name="__construct"></a>35</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="__construct"></a>36</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="__construct"></a>37</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="__construct"></a>38</td><td><pre>     *&nbsp;{@inheritdoc}
+</pre></td></tr><tr><td class="number"><a name="__construct"></a>39</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>40</td><td><pre>    public function buildForm(FormBuilderInterface $builder, array $options)
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>41</td><td><pre>    {
+</pre></td></tr><tr class="notCovered"><td class="number">42</td><td><pre>        $builder-&gt;add(
+</pre></td></tr><tr class="notCovered"><td class="number">43</td><td><pre>            &#039;code&#039;,
+</pre></td></tr><tr class="notCovered"><td class="number">44</td><td><pre>            &#039;text&#039;,
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>45</td><td><pre>            array(
+</pre></td></tr><tr class="notCovered"><td class="number">46</td><td><pre>                &#039;required&#039; =&gt; true,
+</pre></td></tr><tr class="notCovered"><td class="number">47</td><td><pre>                &#039;label&#039;    =&gt; &#039;acme.demo.article.code&#039;,
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>48</td><td><pre>                &#039;attr&#039;     =&gt; array(
+</pre></td></tr><tr class="notCovered"><td class="number">49</td><td><pre>                    &#039;placeholder&#039; =&gt; &#039;acme.demo.article.code&#039;,
+</pre></td></tr><tr class="notCovered"><td class="number">50</td><td><pre>                ),
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>51</td><td><pre>            )
+</pre></td></tr><tr class="notCovered"><td class="number">52</td><td><pre>        );
+</pre></td></tr><tr class="notCovered"><td class="number">53</td><td><pre>        $builder-&gt;add(
+</pre></td></tr><tr class="notCovered"><td class="number">54</td><td><pre>            &#039;intitule&#039;,
+</pre></td></tr><tr class="notCovered"><td class="number">55</td><td><pre>            &#039;text&#039;,
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>56</td><td><pre>            array(
+</pre></td></tr><tr class="notCovered"><td class="number">57</td><td><pre>                &#039;required&#039; =&gt; true,
+</pre></td></tr><tr class="notCovered"><td class="number">58</td><td><pre>                &#039;label&#039;    =&gt; &#039;acme.demo.article.intitule&#039;,
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>59</td><td><pre>                &#039;attr&#039;     =&gt; array(
+</pre></td></tr><tr class="notCovered"><td class="number">60</td><td><pre>                    &#039;placeholder&#039; =&gt; &#039;acme.demo.article.intitule&#039;,
+</pre></td></tr><tr class="notCovered"><td class="number">61</td><td><pre>                ),
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>62</td><td><pre>            )
+</pre></td></tr><tr class="notCovered"><td class="number">63</td><td><pre>        );
+</pre></td></tr><tr class="notCovered"><td class="number">64</td><td><pre>        $builder-&gt;add(
+</pre></td></tr><tr class="notCovered"><td class="number">65</td><td><pre>            &#039;description&#039;,
+</pre></td></tr><tr class="notCovered"><td class="number">66</td><td><pre>            &#039;text&#039;,
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>67</td><td><pre>            array(
+</pre></td></tr><tr class="notCovered"><td class="number">68</td><td><pre>                &#039;required&#039; =&gt; false,
+</pre></td></tr><tr class="notCovered"><td class="number">69</td><td><pre>                &#039;label&#039;    =&gt; &#039;acme.demo.article.description&#039;,
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>70</td><td><pre>                &#039;attr&#039;     =&gt; array(
+</pre></td></tr><tr class="notCovered"><td class="number">71</td><td><pre>                    &#039;placeholder&#039; =&gt; &#039;acme.demo.article.description&#039;,
+</pre></td></tr><tr class="notCovered"><td class="number">72</td><td><pre>                ),
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>73</td><td><pre>            )
+</pre></td></tr><tr class="notCovered"><td class="number">74</td><td><pre>        );
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>75</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">76</td><td><pre>        $builder-&gt;add(
+</pre></td></tr><tr class="notCovered"><td class="number">77</td><td><pre>            &#039;categorie&#039;,
+</pre></td></tr><tr class="notCovered"><td class="number">78</td><td><pre>            &#039;model&#039;,
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>79</td><td><pre>            array(
+</pre></td></tr><tr class="notCovered"><td class="number">80</td><td><pre>                &#039;class&#039;    =&gt; &#039;Acme\DemoBundle\Model\Categorie&#039;,
+</pre></td></tr><tr class="notCovered"><td class="number">81</td><td><pre>                &#039;property&#039; =&gt; &#039;intitule&#039;,
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>82</td><td><pre>            )
+</pre></td></tr><tr class="notCovered"><td class="number">83</td><td><pre>        );
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>84</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">85</td><td><pre>        $builder-&gt;add(&#039;save&#039;, &#039;submit&#039;, array(&#039;label&#039; =&gt; &#039;Submit&#039;));
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>86</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">87</td><td><pre>    }
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>88</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>89</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>90</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>91</td><td><pre>     *&nbsp;{@inheritdoc}
+</pre></td></tr><tr><td class="number"><a name="buildForm"></a>92</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="setDefaultOptions"></a>93</td><td><pre>    public function setDefaultOptions(OptionsResolverInterface $resolver)
+</pre></td></tr><tr><td class="number"><a name="setDefaultOptions"></a>94</td><td><pre>    {
+</pre></td></tr><tr class="notCovered"><td class="number">95</td><td><pre>        $resolver-&gt;setDefaults(
+</pre></td></tr><tr><td class="number"><a name="setDefaultOptions"></a>96</td><td><pre>            array(
+</pre></td></tr><tr class="notCovered"><td class="number">97</td><td><pre>                &#039;data_class&#039;      =&gt; &#039;Acme\DemoBundle\Model\Article&#039;,
+</pre></td></tr><tr class="notCovered"><td class="number">98</td><td><pre>                &#039;intention&#039;       =&gt; &#039;acme_demo_article_form&#039;,
+</pre></td></tr><tr class="notCovered"><td class="number">99</td><td><pre>                &#039;csrf_protection&#039; =&gt; true,
+</pre></td></tr><tr class="notCovered"><td class="number">100</td><td><pre>                &#039;csrf_field_name&#039; =&gt; &#039;_token&#039;,
+</pre></td></tr><tr><td class="number"><a name="setDefaultOptions"></a>101</td><td><pre>            )
+</pre></td></tr><tr class="notCovered"><td class="number">102</td><td><pre>        );
+</pre></td></tr><tr class="notCovered"><td class="number">103</td><td><pre>    }
+</pre></td></tr><tr><td class="number"><a name="setDefaultOptions"></a>104</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="setDefaultOptions"></a>105</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="setDefaultOptions"></a>106</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="setDefaultOptions"></a>107</td><td><pre>     *&nbsp;{@inheritdoc}
+</pre></td></tr><tr><td class="number"><a name="setDefaultOptions"></a>108</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="getName"></a>109</td><td><pre>    public function getName()
+</pre></td></tr><tr><td class="number"><a name="getName"></a>110</td><td><pre>    {
+</pre></td></tr><tr class="notCovered"><td class="number">111</td><td><pre>        return &#039;acme_demo_article_type&#039;;
+</pre></td></tr><tr><td class="number"><a name="getName"></a>112</td><td><pre>    }
+</pre></td></tr><tr><td class="number"><a name="getName"></a>113</td><td><pre>}
+</pre></td></tr>
+				</table>
+			</div>
+		</div>
+		<div id="footer">
+			<p>Code coverage report powered by <a href="http://atoum.org">atoum</a></p>
+		</div>
+	</body>
+</html>
