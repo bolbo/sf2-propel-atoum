@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Language" content="en" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>sf2-propel-atoum : code coverage of Acme\DemoBundle\Controller\ArticleController</title>
+		<link rel="stylesheet" media="screen" type="text/css" href="../../../screen.css" title="Screen" />
+	</head>
+	<body>
+		<div id="header">
+			<h1>Code coverage of <a href="../../../index.html">sf2-propel-atoum</a>: Acme\DemoBundle\Controller\ArticleController</h1>
+			<h2>Class code coverage <span>67.86%</span></h2>
+		</div>
+		<div id="page">
+			<div id="content">
+				<h3>Methods</h3>
+				<ul class="summary">
+					
+						
+							<li>
+								
+								
+									<div class="bar">
+										<div class="background"></div>
+										<div class="graph" style="width: 100%"></div>
+										<div class="label">
+											<span class="percent">100%</span>
+											<a href="#listAction">listAction</a>
+										</div>
+									</div>
+								
+							</li>
+						
+							<li>
+								
+								
+									<div class="bar">
+										<div class="background"></div>
+										<div class="graph" style="width: 0%"></div>
+										<div class="label">
+											<span class="percent">0%</span>
+											<a href="#showAction">showAction</a>
+										</div>
+									</div>
+								
+							</li>
+						
+							<li>
+								
+								
+									<div class="bar">
+										<div class="background"></div>
+										<div class="graph" style="width: 80%"></div>
+										<div class="label">
+											<span class="percent">80%</span>
+											<a href="#addAction">addAction</a>
+										</div>
+									</div>
+								
+							</li>
+						
+					
+				</ul>
+				<h3>Source</h3>
+				<table cellpadding="0" cellspacing="0" class="source">
+					<tr><th class="number">Line</th><th>Code</th></tr>
+					<tr><td class="number">1</td><td><pre>&lt;?php
+</pre></td></tr><tr><td class="number">2</td><td><pre>/**
+</pre></td></tr><tr><td class="number">3</td><td><pre> * ArticleController.php
+</pre></td></tr><tr><td class="number">4</td><td><pre> *
+</pre></td></tr><tr><td class="number">5</td><td><pre> * PHP version 5
+</pre></td></tr><tr><td class="number">6</td><td><pre> */
+</pre></td></tr><tr><td class="number">7</td><td><pre>namespace Acme\DemoBundle\Controller;
+</pre></td></tr><tr><td class="number">8</td><td><pre>
+</pre></td></tr><tr><td class="number">9</td><td><pre>use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+</pre></td></tr><tr><td class="number">10</td><td><pre>use Symfony\Component\HttpFoundation\Request;
+</pre></td></tr><tr><td class="number">11</td><td><pre>use Acme\DemoBundle\Form\Handler\ArticleHandler;
+</pre></td></tr><tr><td class="number">12</td><td><pre>
+</pre></td></tr><tr><td class="number">13</td><td><pre>/**
+</pre></td></tr><tr><td class="number">14</td><td><pre> * Class ArticleController
+</pre></td></tr><tr><td class="number">15</td><td><pre> *
+</pre></td></tr><tr><td class="number">16</td><td><pre> * @package Acme\DemoBundle\Controller
+</pre></td></tr><tr><td class="number">17</td><td><pre> */
+</pre></td></tr><tr><td class="number">18</td><td><pre>class ArticleController extends Controller
+</pre></td></tr><tr><td class="number">19</td><td><pre>{
+</pre></td></tr><tr><td class="number">20</td><td><pre>    /**
+</pre></td></tr><tr><td class="number">21</td><td><pre>     * @return \Symfony\Component\HttpFoundation\Response
+</pre></td></tr><tr><td class="number">22</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="listAction"></a>23</td><td><pre>    public function listAction()
+</pre></td></tr><tr><td class="number"><a name="listAction"></a>24</td><td><pre>    {
+</pre></td></tr><tr class="covered"><td class="number">25</td><td><pre>        $articleManager = $this-&gt;container-&gt;get(&#039;acme_demo_article_manager&#039;);
+</pre></td></tr><tr class="covered"><td class="number">26</td><td><pre>        $list           = $articleManager-&gt;findAll();
+</pre></td></tr><tr><td class="number"><a name="listAction"></a>27</td><td><pre>
+</pre></td></tr><tr class="covered"><td class="number">28</td><td><pre>        return $this-&gt;render(&#039;AcmeDemoBundle:Article:list.html.twig&#039;, array(&#039;list&#039; =&gt; $list));
+</pre></td></tr><tr><td class="number"><a name="listAction"></a>29</td><td><pre>    }
+</pre></td></tr><tr><td class="number"><a name="listAction"></a>30</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="listAction"></a>31</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="listAction"></a>32</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="listAction"></a>33</td><td><pre>     * @param $id
+</pre></td></tr><tr><td class="number"><a name="listAction"></a>34</td><td><pre>     *
+</pre></td></tr><tr><td class="number"><a name="listAction"></a>35</td><td><pre>     * @return \Symfony\Component\HttpFoundation\Response
+</pre></td></tr><tr><td class="number"><a name="listAction"></a>36</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="showAction"></a>37</td><td><pre>    public function showAction($id)
+</pre></td></tr><tr><td class="number"><a name="showAction"></a>38</td><td><pre>    {
+</pre></td></tr><tr class="notCovered"><td class="number">39</td><td><pre>        $articleManager = $this-&gt;container-&gt;get(&#039;acme_demo_article_manager&#039;);
+</pre></td></tr><tr class="notCovered"><td class="number">40</td><td><pre>        $element        = $articleManager-&gt;findOneById($id);
+</pre></td></tr><tr><td class="number"><a name="showAction"></a>41</td><td><pre>        //var_dump($element);
+</pre></td></tr><tr><td class="number"><a name="showAction"></a>42</td><td><pre>        //exit;
+</pre></td></tr><tr><td class="number"><a name="showAction"></a>43</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">44</td><td><pre>        if (null === $element) {
+</pre></td></tr><tr class="notCovered"><td class="number">45</td><td><pre>            throw $this-&gt;createNotFoundException(&#039;Article not found&#039;);
+</pre></td></tr><tr><td class="number"><a name="showAction"></a>46</td><td><pre>        }
+</pre></td></tr><tr><td class="number"><a name="showAction"></a>47</td><td><pre>
+</pre></td></tr><tr class="notCovered"><td class="number">48</td><td><pre>        return $this-&gt;render(&#039;AcmeDemoBundle:Article:show.html.twig&#039;, array(&#039;element&#039; =&gt; $element));
+</pre></td></tr><tr><td class="number"><a name="showAction"></a>49</td><td><pre>    }
+</pre></td></tr><tr><td class="number"><a name="showAction"></a>50</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="showAction"></a>51</td><td><pre>
+</pre></td></tr><tr><td class="number"><a name="showAction"></a>52</td><td><pre>    /**
+</pre></td></tr><tr><td class="number"><a name="showAction"></a>53</td><td><pre>     * @param Request $request
+</pre></td></tr><tr><td class="number"><a name="showAction"></a>54</td><td><pre>     *
+</pre></td></tr><tr><td class="number"><a name="showAction"></a>55</td><td><pre>     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+</pre></td></tr><tr><td class="number"><a name="showAction"></a>56</td><td><pre>     */
+</pre></td></tr><tr><td class="number"><a name="addAction"></a>57</td><td><pre>    public function addAction(Request $request)
+</pre></td></tr><tr><td class="number"><a name="addAction"></a>58</td><td><pre>    {
+</pre></td></tr><tr class="covered"><td class="number">59</td><td><pre>        $articleManager = $this-&gt;get(&#039;acme_demo_article_manager&#039;);
+</pre></td></tr><tr class="covered"><td class="number">60</td><td><pre>        $article        = $articleManager-&gt;create();
+</pre></td></tr><tr><td class="number"><a name="addAction"></a>61</td><td><pre>
+</pre></td></tr><tr class="covered"><td class="number">62</td><td><pre>        $form = $this-&gt;get(&#039;acme_demo.form.article&#039;);
+</pre></td></tr><tr class="covered"><td class="number">63</td><td><pre>        $form-&gt;setData($article);
+</pre></td></tr><tr><td class="number"><a name="addAction"></a>64</td><td><pre>
+</pre></td></tr><tr class="covered"><td class="number">65</td><td><pre>        $formHandler = new ArticleHandler(
+</pre></td></tr><tr class="covered"><td class="number">66</td><td><pre>            $form,
+</pre></td></tr><tr class="covered"><td class="number">67</td><td><pre>            $request,
+</pre></td></tr><tr><td class="number"><a name="addAction"></a>68</td><td><pre>            $articleManager
+</pre></td></tr><tr class="covered"><td class="number">69</td><td><pre>        );
+</pre></td></tr><tr><td class="number"><a name="addAction"></a>70</td><td><pre>
+</pre></td></tr><tr class="covered"><td class="number">71</td><td><pre>        if ($formHandler-&gt;process()) {
+</pre></td></tr><tr class="notCovered"><td class="number">72</td><td><pre>            return $this-&gt;redirectToRoute(
+</pre></td></tr><tr class="notCovered"><td class="number">73</td><td><pre>                &#039;acme_demo_article_list&#039;,
+</pre></td></tr><tr class="notCovered"><td class="number">74</td><td><pre>                array()
+</pre></td></tr><tr class="notCovered"><td class="number">75</td><td><pre>            );
+</pre></td></tr><tr><td class="number"><a name="addAction"></a>76</td><td><pre>        }
+</pre></td></tr><tr><td class="number"><a name="addAction"></a>77</td><td><pre>
+</pre></td></tr><tr class="covered"><td class="number">78</td><td><pre>        return $this-&gt;render(
+</pre></td></tr><tr class="covered"><td class="number">79</td><td><pre>            &#039;AcmeDemoBundle:Article:form.html.twig&#039;,
+</pre></td></tr><tr><td class="number"><a name="addAction"></a>80</td><td><pre>            array(
+</pre></td></tr><tr class="covered"><td class="number">81</td><td><pre>                &#039;action&#039;  =&gt; &#039;add&#039;,
+</pre></td></tr><tr class="covered"><td class="number">82</td><td><pre>                &#039;element&#039; =&gt; $article,
+</pre></td></tr><tr class="covered"><td class="number">83</td><td><pre>                &#039;form&#039;    =&gt; $form-&gt;createView()
+</pre></td></tr><tr class="covered"><td class="number">84</td><td><pre>            )
+</pre></td></tr><tr class="covered"><td class="number">85</td><td><pre>        );
+</pre></td></tr><tr><td class="number"><a name="addAction"></a>86</td><td><pre>    }
+</pre></td></tr><tr><td class="number"><a name="addAction"></a>87</td><td><pre>}
+</pre></td></tr>
+				</table>
+			</div>
+		</div>
+		<div id="footer">
+			<p>Code coverage report powered by <a href="http://atoum.org">atoum</a></p>
+		</div>
+	</body>
+</html>

@@ -40,6 +40,10 @@ class ArticleType extends FormTestCase
         foreach (array_keys($formData) as $key) {
             $this->array($formData)->hasKey($key);
         }
+
+
+        $this->integer(45)
+             ->isEqualTo(6);
     }
 
 
